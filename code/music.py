@@ -15,6 +15,9 @@ class Spider(object):
 	header = {'Host':'king.junyuewl.com','Referer':'https://y.qq.com/portal/search.html','Content-Type':'application/x-www-form-urlencoded','User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0'}
 	music_info =[]
 	def index_request(self):
+
+		str = input()
+		self.starname = str
 		response=requests.post(self.url_ku_gou,data=self.data,headers=self.header)
 		jsonres=re.findall(r'jQuery111307253625129728498_1563797077768\((.*)\)',response.text,re.S)
 		res = json.loads(''.join(jsonres))
